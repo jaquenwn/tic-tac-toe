@@ -1,4 +1,4 @@
-const Announcement = () => {
+const Tile = () => {
     return (
         <div className="text-center">
             
@@ -6,4 +6,4 @@ const Announcement = () => {
     );
 };
 
-export default Announcement;
+export default Tile;

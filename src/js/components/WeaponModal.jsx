@@ -1,4 +1,6 @@
 import React from "react";
+import PlayerName from './PlayerName';
+import WeaponButton from './WeaponButton';
 
 const WeaponModal = () => {
 	return (
