@@ -8,16 +8,11 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	constructor (){
-		super();
-		this.state = {
-			gameBoard: [
-				' ', ' ', ' ',
-				' ', ' ', ' ',
-				' ', ' ', ' ',
-			]
-		}
-	} 
+	 const [gameBoard, setGameBoard] = useState([
+    ' ', ' ', ' ',
+    ' ', ' ', ' ',
+    ' ', ' ', ' ',
+ 	 ]);
 	return (
 		<div className="text-center container">
             <div className= "menu">
@@ -26,9 +21,11 @@ const Home = () => {
 				<WeaponModal/>
 				<ResetButton/>
 			</div>
-			{this.state.gameBoard.map(function(value, i){
-				<Tile/>
-			})}
+			<div className="game-board">
+        		{gameBoard.map((value, index) => (
+        		  <Tile key={index} value={value} />
+        		))}
+    		</div>
 		</div>
 	);
 };
