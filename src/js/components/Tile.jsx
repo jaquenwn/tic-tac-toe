@@ -1,7 +1,7 @@
 const Tile = () => {
     return (
         <div className="text-center">
-            
+            lol
         </div>
     );
 };
