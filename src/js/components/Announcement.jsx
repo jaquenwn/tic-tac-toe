@@ -1,3 +1,5 @@
+import React from "react";
+
 const Announcement = () => {
     return (
         <div className="text-center visible">

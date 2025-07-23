@@ -6,12 +6,14 @@ const WeaponModal = () => {
 	return (
 		<div className="text-center container">
             <div className= "menu">
-				<h3 className="text-center mt-5">CHOOSE YOUR WEAPON</h3>
-				<PlayerName/>
-                <PlayerName/>
-                <div className= "buttongroup">
-                <WeaponButton/>
-                <WeaponButton/>
+				<h3 className="text-center mt-5">Choose your icon</h3>
+				<div className= "d-flex justify-content-center" >
+					<PlayerName playerNum="1" />
+        	        <PlayerName playerNum="2"/>
+				</div>
+                <div className= "d-flex justify-content-center buttongroup">
+                <WeaponButton figura = "luna"/>
+                <WeaponButton figura = "sol"/>
                 </div>
 			</div>
 		</div>
