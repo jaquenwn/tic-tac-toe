@@ -24,28 +24,34 @@ const Home = () => {
  		newBoard[index] = turn;
  		setBoard(newBoard);
  		setTurn(turn === "sun" ? "moon" : "sun");
-		
+		result (newBoard)
  	};
+	const resetGame = () => {
+	setBoard(Array(9).fill(null));
+	setTurn("sun");
+	setLock(false);
+	setWinner(null); 
+	};
 
 
-	const result = () => {
-		if (board[0] === board[1] && board[1] === board[2]  && board[1] !== "") {
-			win(board[2]);
-		} else if (board[3] === board[4] && board[4] === board[5]  && board[5] !== "") {
-			win(board[5]);
-		} else if (board[6] === board[7] && board[7] === board[8]  && board[8] !== "") {
-			win(board[8]);
-		} else if (board[0] === board[3] && board[3] === board[6]  && board[6] !== "") {
-			win(turn);
-		} else if (board[1] === board[4] && board[4] === board[7]  && board[7] !== "") {
-			win(turn);
-		} else if (board[2] === board[5] && board[5] === board[8]  && board[8] !== "") {
-			win(turn);
-		} else if (board[0] === board[4] && board[4] === board[8]  && board[8] !== "") {
-			win(turn);
-		} else if (board[2] === board[4] && board[4] === board[6]  && board[6] !== "") {
-			win(turn);
-		} 
+	 const result = (currentBoard) => {
+ 		if (currentBoard[0] === currentBoard[1] && currentBoard[1] === currentBoard[2] && currentBoard[1] !== null) {
+ 			win(currentBoard[0]);
+		} else if (currentBoard[3] === currentBoard[4] && currentBoard[4] === currentBoard[5] && currentBoard[5] !== null) {
+ 			win(currentBoard[3]);
+		} else if (currentBoard[6] === currentBoard[7] && currentBoard[7] === currentBoard[8] && currentBoard[8] !== null) {
+			win(currentBoard[6]);
+		} else if (currentBoard[0] === currentBoard[3] && currentBoard[3] === currentBoard[6] && currentBoard[6] !== null) {
+ 			win(currentBoard[0]);
+ 		} else if (currentBoard[1] === currentBoard[4] && currentBoard[4] === currentBoard[7] && currentBoard[7] !== null) {
+			win(currentBoard[1]);
+ 		} else if (currentBoard[2] === currentBoard[5] && currentBoard[5] === currentBoard[8] && currentBoard[8] !== null) {
+ 			win(currentBoard[2]);
+ 		} else if (currentBoard[0] === currentBoard[4] && currentBoard[4] === currentBoard[8] && currentBoard[8] !== null) {
+			win(currentBoard[0]);
+		} else if (currentBoard[2] === currentBoard[4] && currentBoard[4] === currentBoard[6] && currentBoard[6] !== null) {
+ 			win(currentBoard[2]);
+ 		}
 	}
 
 	const win = (winner) => {
@@ -69,7 +75,7 @@ const Home = () => {
 				<div>
 					<Announcement ganador= {winnerRef.current}/>
 					{/* <WeaponModal/> */}
-					<ResetButton/>
+					<ResetButton onReset = {resetGame}/>
 				</div>
 			</div>
 			<div className="board d-flex flex-column justify-content-center my-3">

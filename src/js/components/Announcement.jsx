@@ -4,7 +4,8 @@ import React from "react";
 const Announcement = ({ganador}) => {
     return (
         <div className="text-center visible">
-            <h2>Game Over {ganador}</h2>
+            <h1>{ganador}</h1>
+            <h2>Game Over </h2>
         </div>
     );
 };

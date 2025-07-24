@@ -1,9 +1,9 @@
 import React from "react";
 
-const ResetButton = () => {
+const ResetButton = ({onReset}) => {
     return (
         <div className="text-center ">
-            <button className= "rounded-pill border-0 p-2">Reset</button>
+            <button className= "rounded-pill border-0 p-2" onClick= {onReset}>Reset</button>
         </div>
     );
 };
